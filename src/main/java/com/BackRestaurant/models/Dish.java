@@ -1,6 +1,7 @@
 package com.BackRestaurant.models;
 
 import java.math.BigDecimal;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,7 +14,7 @@ public class Dish {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String[] ingredients;
+	private Set<String> ingredients;
 	private String urlImage;
 	private String description;
 	private BigDecimal price;
@@ -30,13 +31,17 @@ public class Dish {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	
-	public String[] getIngredients() {
+	public Set<String> getIngredients() {
 		return ingredients;
 	}
-	public void setIngredients(String[] ingredients) {
+	public void setIngredients(Set<String> ingredients) {
 		this.ingredients = ingredients;
+	}
+	public void addIngredient(String i) {
+		this.ingredients.add(i);
+	}
+	public void removeIngredient(String i) {
+		this.ingredients.remove(i);
 	}
 	public BigDecimal getPrice() {
 		return price;
@@ -47,7 +52,4 @@ public class Dish {
 	public Long getId() {
 		return id;
 	}
-	
-	
-	
 }

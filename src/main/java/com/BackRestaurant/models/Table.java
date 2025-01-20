@@ -12,7 +12,7 @@ public class Table {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private Short capacity;
+	private Short maxCapacity;
 	private Boolean enable;
 	
 	public String getName() {
@@ -22,10 +22,10 @@ public class Table {
 		this.name = name;
 	}
 	public Short getCapacity() {
-		return capacity;
+		return maxCapacity;
 	}
-	public void setCapacity(Short capacity) {
-		this.capacity = capacity;
+	public void setCapacity(Short maxCapacity) {
+		this.maxCapacity = maxCapacity;
 	}
 	public Long getId() {
 		return id;
