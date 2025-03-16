@@ -20,6 +20,8 @@ public class Reservation {
 	private Short diners;
 	@NotNull
 	private LocalDateTime date;
+	
+	private LocalDateTime finishDate;
 	@NotNull
 	private MyUser client;
 	

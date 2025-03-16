@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Table {
@@ -11,15 +13,17 @@ public class Table {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	@NotBlank
+	private Short number;
+	@Min(2)
 	private Short maxCapacity;
 	private Boolean enable;
 	
-	public String getName() {
-		return name;
+	public Short getNumber() {
+		return number;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setName(Short number) {
+		this.number = number;
 	}
 	public Short getCapacity() {
 		return maxCapacity;
